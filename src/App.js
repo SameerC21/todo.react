@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./App.css"
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
@@ -8,6 +8,9 @@ function App() {
   let addList = (inputText)=>{
     setListTodo([...listTodo,inputText])
   }
+  useEffect(() => {
+    localStorage.setItem("listTodo", JSON.stringify(listTodo));
+  }, [listTodo]);
   return (
     <div className='main-container'>
       <div className='center-container'>

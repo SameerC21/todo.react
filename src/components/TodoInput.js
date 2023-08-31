@@ -4,31 +4,37 @@ function TodoInput(props) {
   const[inputText,setInputText] = useState('');
   const [error,setError] = useState('')
   
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    setInputText(e.target.value);
+  };
+  const addTask = (e) => {
+    props.addList(inputText)
+    setInputText('');
     e.preventDefault();
-    if (inputText.length===0){
+    if (inputText.length === 0){
       setError(true);
+      // const newItem = {
+      //   text: inputText,
+      //   id: Date.now()
+      // };
+      }else{
+        setError(false);
     }
+    console.log('Input is:', inputText);
   }
-
   return (
     <div className='input-container'>
-        <form onSubmit={handleSubmit}>
+        <form>
           <input 
             type='text' 
             className='input-box-todo' 
             placeholder='Enter Task'
             value={inputText}
-            onChange={e=> {
-              setInputText(e.target.value)
-            }}/>
+            onChange={handleInputChange}/>
           {error? <label>Input field can't be empty</label>:""}
-          <button 
+          <button type='submit'
             className='add-btn'
-            onClick={()=>{
-              props.addList(inputText)
-              setInputText('')
-            }}>+
+            onClick={addTask}>+
           </button>
         </form>
 
