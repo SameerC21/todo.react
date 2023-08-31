@@ -13,10 +13,6 @@ function TodoInput(props) {
     e.preventDefault();
     if (inputText.length === 0){
       setError(true);
-      // const newItem = {
-      //   text: inputText,
-      //   id: Date.now()
-      // };
       }else{
         setError(false);
     }
