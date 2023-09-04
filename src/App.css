@@ -18,12 +18,9 @@ body{
   width: 400px;
   padding: 10px 0;
 }
-.app-heading{
-  padding: 4px;
-  color: white;  
-  /* text-align: center; */
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-transform: uppercase;
+.center-container h3 {
+  color: #316fc1;
+  text-align: center;
 }
 .input-container{
   margin-bottom: 5px;
@@ -33,6 +30,7 @@ body{
 .input-container form {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   padding-bottom: 25px;
 }
@@ -49,6 +47,11 @@ body{
   font-size: large;
 }
 label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+label.errormsg {
   color: #ff0000;
   position: absolute;
   bottom: 0;
@@ -80,18 +83,33 @@ label {
 }
 .list-item{
   list-style-type: none;
-  /* background-color: #596e8b; */
-  border:2px solid rgb(161, 158, 158);
-  color:white;
+  background-color: #FFFFFF;
+  border:1px solid rgb(161, 158, 158);
+  color: #316fc1;
   padding:3px;
   padding-left: 5px;
-  border-radius: 5px; 
+  border-radius: 10px; 
   width: 100%;
-  height: 30px;
+  height: auto;
   display: flex;
   align-items: center;
   position: relative;
   margin-top: 10px;
+  /* cursor: pointer; */
+}
+/* .list-item:hover {
+  transform: translateY(-5px);
+} */
+.list-item p {
+  padding: 5px 5px;
+  word-break: break-all;
+}
+.delete {
+  margin-left: auto;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 5px 5px;
+  cursor: pointer;
 }
 .icons{
   position: absolute;

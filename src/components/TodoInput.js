@@ -8,9 +8,9 @@ function TodoInput(props) {
     setInputText(e.target.value);
   };
   const addTask = (e) => {
-    props.addList(inputText)
-    setInputText('');
     e.preventDefault();
+    props.addList(inputText);
+    setInputText('');
     if (inputText.length === 0){
       setError(true);
       }else{
@@ -21,13 +21,17 @@ function TodoInput(props) {
   return (
     <div className='input-container'>
         <form>
+          <label htmlFor="new-todo">
+            What needs to be done?
+          </label>
           <input 
+            id='new-todo'
             type='text' 
             className='input-box-todo' 
             placeholder='Enter Task'
             value={inputText}
             onChange={handleInputChange}/>
-          {error? <label>Input field can't be empty</label>:""}
+          {error? <label className='errormsg'>Input field can't be empty</label>:""}
           <button type='submit'
             className='add-btn'
             onClick={addTask}>+

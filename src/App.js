@@ -14,6 +14,7 @@ function App() {
   return (
     <div className='main-container'>
       <div className='center-container'>
+        <h3>TODO</h3>
         <TodoInput addList={addList}/>
         <hr />
         {
